@@ -10,4 +10,4 @@ jobs:
         uses: actions/checkout@v7
 
       - name: mostrar
-        run: echo $(ls)
+        run: python calc.py
