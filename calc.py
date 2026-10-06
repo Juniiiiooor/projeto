@@ -1,5 +1,3 @@
-"""Calculadora simples usada como exemplo de execucao no CI."""
-
 def somar(a, b):
     return a + b
 
