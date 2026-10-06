@@ -3,4 +3,11 @@ on: [push]
 
 jobs:
   test:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: copia repositorio
+        uses: actions/checkout@v7
+
+      - name: mostrar
+        run: echo $(ls)
