@@ -1,0 +1,64 @@
+Solicitante: junior62168286@alunos.sc.senac.br
+Equipamento: CCE207D075725.alunos.sc.senac.br
+
+
+RESUMO
+------
+Nao consigo login no OneDrive, no navegador e nos aplicativos Microsoft.
+Nao e problema de senha: a senha esta correta e o acesso ao dominio local
+ALUNOS funciona normalmente.
+
+
+ERRO
+----
+Codigo: AADSTS135011
+Mensagem: "Device used during the authentication is disabled"
+SubError: device_authentication_failed
+Code: invalid_grant
+
+O token antigo ainda vale, entao o OneDrive aparenta estar logado, mas toda
+tentativa de renovar a sessao falha. Como o SSO silencioso acontece antes de
+qualquer digitacao de senha, digitar a senha nao contorna o erro.
+
+
+IDENTIFICADORES
+---------------
+Conta:                    junior62168286@alunos.sc.senac.br
+Tenant ID:                0917fe10-56db-44bf-b1c5-31061ab21cf9
+Tenant Name:              SENAC-SC
+Device ID (registro):     4c8757e4-26d4-467d-8a92-59895e10b2d8
+WorkplaceDeviceId:        3f437ce0-d494-4e8f-9511-4a627bc8ec0a
+Nome do PC:               CCE207D075725.alunos.sc.senac.br
+Dominio local:            ALUNOS.SC.SENAC.BR
+AzureAdJoined:            NO
+WorkplaceJoined:          YES
+WorkplaceTenantName:      SENAC-SC
+
+
+QUANDO COMECOU
+--------------
+Primeira ocorrencia no log: 29/09/2026 19:34:45
+Ultima ocorrencia:         05/10/2026 20:42
+Total de falhas no log:    202
+Nenhum outro tipo de erro AADSTS no periodo - todos os 202 sao o mesmo 135011.
+
+
+O QUE JA FOI TENTADO
+--------------------
+- Limpeza de cache local de credenciais (TokenBroker, IdentityCache,
+  Office Identity). Sem efeito, o erro continuou aparecendo.
+- dsregcmd /leave executado sem privilegio de administrador. Sem efeito,
+  o WorkplaceDeviceId permaneceu 3f437ce0-d494-4e8f-9511-4a627bc8ec0a.
+- Verificacao de saude da maquina: OneDrive na versao atual, processo ativo,
+  tickets Kerberos do dominio emitidos e validos, AD Connectivity Test PASS,
+  DNS resolvendo normalmente. O lado do Windows esta funcionando.
+
+
+O QUE PRECISO
+-------------
+Reativar ou remover o objeto de dispositivo no Entra ID do tenant
+0917fe10-56db-44bf-b1c5-31061ab21cf9 e refazer o registro do equipamento.
+
+Se o dispositivo foi desativado de forma intencional (excesso de licenca,
+apolamento no curso, fim de matricula), me avisem que eu uso conta pessoal
+Microsoft ate a regularizacao. O que preciso e da liberacao do registro.
